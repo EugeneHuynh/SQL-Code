@@ -284,7 +284,7 @@ set elecdate = '01/01/1900'
 where elecdate = ''
 --Replaces the blanks for endage and elecdate to N/A and 01/01/1900 respectively.
 update RawNHSData
-set newnhsno = NULL
+set newnhsno = 'Unknown'
 where newnhsno = ''
 --Replaces blank NHS numbers with NULL
 select
@@ -339,3 +339,4 @@ left join DimSex on r.sex = DimSex.ID
 order by cast(r.[ID no ] as int) asc --orders by ID number
 
 --queries data with the meaningul descriptions instead of the codes by joining the IDs to the relevant table
+
